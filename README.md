@@ -57,26 +57,26 @@ sudo firewall-cmd --reload
 ```shell
 echo "
 [global]
-	workgroup = WORKGROUP
-	lanman auth = yes
-	client lanman auth = yes
-	client plaintext auth = yes
-	client min protocol = nt1
-	client max protocol = smb3
-	log file = /var/log/samba/log.%m
-	max log size = 1000
-	panic action = /usr/share/samba/panic-action %d
-	map to guest = bad user
+    workgroup = WORKGROUP
+    lanman auth = yes
+    client lanman auth = yes
+    client plaintext auth = yes
+    client min protocol = nt1
+    client max protocol = smb3
+    log file = /var/log/samba/log.%m
+    max log size = 1000
+    panic action = /usr/share/samba/panic-action %d
+    map to guest = bad user
 
 [My Public Share]
-	comment = My Public Folder
-	path = /media
-	public = yes
-	writable = yes
-	create mast = 0755
-	guest ok = yes
-	security = SHARE
-  	  " | sudo tee /etc/samba/smb.conf
+    comment = My Public Folder
+    path = /media
+    public = yes
+    writable = yes
+    create mast = 0755
+    guest ok = yes
+    security = SHARE
+     " | sudo tee /etc/samba/smb.conf
 ```
 
 #### Config file edit for the private share with username/password
@@ -86,16 +86,16 @@ echo "
 ```shell
 echo "
 [global]
-	 workgroup = WORKGROUP
-	 lanman auth = yes
- 	 client lanman auth = yes
-	 client plaintext auth = yes
-	 client min protocol = nt1
-	 client max protocol = smb3
-	 log file = /var/log/samba/log.%m
-	 max log size = 1000
-	 panic action = /usr/share/samba/panic-action %d
-	 map to guest = bad user
+    workgroup = WORKGROUP
+    lanman auth = yes
+    client lanman auth = yes
+    client plaintext auth = yes
+    client min protocol = nt1
+    client max protocol = smb3
+    log file = /var/log/samba/log.%m
+    max log size = 1000
+    panic action = /usr/share/samba/panic-action %d
+    map to guest = bad user
 		 
 [homes]
     comment = Home Directories
@@ -103,7 +103,7 @@ echo "
     browseable = No
     read only = No
     inherit acls = Yes
-	  " | sudo tee /etc/samba/smb.conf
+     " | sudo tee /etc/samba/smb.conf
 ```
 
 ## adding new user and set password
